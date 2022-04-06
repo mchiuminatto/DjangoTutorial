@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %} <!-- First load static content-->
+<html lang="en">
+<link rel="stylesheet" href="{% static 'style.css'%}"> <!-- second, make reference to static content through Django -->
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>
+        How are you doing today {{name}}?<br>
+        you are {{age}} years old <br>
+        from {{nationality}}
+    </h1>
+    <form method="POST" action="counter_post">
+        {% csrf_token %}
+        <textarea name="text" rows="50" cols="50"></textarea>
+        <input type="submit"/>
+    </form>
+</body>
+</html>
